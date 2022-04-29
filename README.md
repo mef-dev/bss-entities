@@ -1,0 +1,2 @@
+# bss-entities
+This BSS.Entities NuGet implements a plug-in for MEF.DEV platform and provides access to the unified information model SID (Shared Information and Data Model) of the Telecom BSS domain, as part of the NGOSS concept, was developed based on ITUT (M.3050) of the TM Forum organization and is the basis for the integration of OSS/BSS (Operation Support System/Business Support System) through their use of a unified information model to provide data.
