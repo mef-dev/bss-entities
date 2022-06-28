@@ -24,4 +24,5 @@ The BSS.Entities SID model diagram is a part of the business analysis of existin
 
 ### XML Schema of SID-model
  
-XML Schema of SID-model is available [here](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/sid.xsd)
+- SID-model file is named `BSS.Entities.xml`
+- XML Schema of SID-model is available [here](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/sid.xsd)
