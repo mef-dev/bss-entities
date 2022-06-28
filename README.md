@@ -22,7 +22,7 @@ The BSS.Entities SID-model is the set of Entities and Actions (atomic part of th
 
 The BSS.Entities SID model diagram is a part of the business analysis of existing product management processes in an organization and the development of new services or products. It can help you identify processes that provide the same business function, eliminate possible duplication, detect gaps, accelerate new product development, and reduce inconsistencies. The BSS.Entities SID model allows you to assess the significance of individual processes used in an organization to evaluate the impact when a new process or product is launched. The SID model simplifies relationships with partners in product development, as it allows you to identify and standardize the processes used when interacting with them. Likewise, you can place the critical processes used in customer interactions and assess whether these processes are performing as expected by the end customers.
 
-### XML Schema of SID-model
+### Useful links
  
-- SID-model file is named `BSS.Entities.xml`
-- XML Schema of SID-model is available [here](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/sid.xsd)
+- Ready-to-use BSS.Entities package is available as [Nuget package](https://www.nuget.org/packages/BSS.Entities)
+- XML Schema is available in [XSD](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/sid.xsd)
