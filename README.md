@@ -2,7 +2,8 @@
 
 This BSS.Entities Shared Information and Data Model (formerly named as Natec.Entities) is used for generating Visual Studio Project templates to implement the custom business logic of BSS Entities and Action entire the Telecom BSS domain. This SID model is aimed to support the NGOSS concept, developed based on ITUT (M.3050) of the TM Forum organization, and is the basis for the integration of OSS/BSS (Operation Support System/Business Support System).
 
-Before you contribute, please look through the guide [Creation of Backend package from template](https://mef.dev/dev_guides/first_backend_plugin.md) and expore the project template [Model-First project template for MEF.DEV platfrom](https://github.com/mef-dev/model-first-backend-plugin) 
+Before you contribute, please look through the guide [Creation of Backend package from the template](https://mef.dev/dev_guides/first_backend_plugin.md) 
+
 
 The BSS.Entities SID Model is key part of the MEF.DEV [Reference Architecture](https://mef.dev/plugin_basics/introduction.md#domain-driven-reference-architecture), that gives independent developers open access to the main operational processes of consumer support, such as Fulfilment, Assurance, and Billing (FAB).
 
