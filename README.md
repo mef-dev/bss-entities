@@ -7,7 +7,7 @@ Before you contribute, please look through the guide [Creation of Backend packag
 
 The BSS.Entities SID Model is key part of the MEF.DEV [Reference Architecture](https://mef.dev/plugin_basics/introduction.md#domain-driven-reference-architecture), that gives independent developers open access to the main operational processes of consumer support, such as Fulfilment, Assurance, and Billing (FAB).
 
-|![BSS.Entities diagram](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/Unibill.Entities.svg)|
+|![BSS.Entities diagram](https://mef.dev/images/plugin_basics/introduction/sid.png)|
 | :--: |
 
 The BSS.Entities SID-model is the set of Entities and Actions (atomic part of the process flow) allocated based on the experience of real projects in the Telecom BSS domain. The Telecom provider can build the custom flow based on the existing sets of Actions, which will allow, due to their combination and unification, to implement their specific “end-to-end” scenario with the help of which these processes ensure the implementation of the purpose of the company's business activities.

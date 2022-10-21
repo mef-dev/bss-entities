@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2022-06-28T12:04:56.3315148+03:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2022-10-19T21:03:19.2896334+03:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -12559,24 +12559,6 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <ComplexProperties />
             </Argument>
             <Argument>
-              <AttributeName>acnt_Number</AttributeName>
-              <ParameterName>bill_acc</ParameterName>
-              <DataType>integer</DataType>
-              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
-              <DBDataType>Int32</DBDataType>
-              <Direction>OUTPUT</Direction>
-              <Description>Лицевой счет абонента</Description>
-              <Mandatory>true</Mandatory>
-              <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV />
-              <MaximumLength>4</MaximumLength>
-              <Place>Body</Place>
-              <AttributeType>Value</AttributeType>
-              <Size>0</Size>
-              <ComplexParts />
-              <ComplexProperties />
-            </Argument>
-            <Argument>
               <AttributeName>EffectiveDate</AttributeName>
               <ParameterName>creation_date</ParameterName>
               <DataType>date</DataType>
@@ -12804,6 +12786,24 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV />
               <MaximumLength>510</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>acnt_Number</AttributeName>
+              <ParameterName>bill_acc</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Лицевой счет абонента</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>12</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
               <Size>0</Size>
@@ -13455,6 +13455,912 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
           </Arguments>
         </ProcedureCall>
       </ProcedureCalls>
+    </Entity>
+    <Entity>
+      <EntityName>BankStatements/ClearBatch</EntityName>
+      <ProcedureCalls>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_del_BatchPayDocRecords</ProcedureName>
+          <Part>Request</Part>
+          <Method>ACTION</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>BatchID</AttributeName>
+              <ParameterName>Batch_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>ID пачки платежей, которая находится на обработке в АРМ</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ErrFormat</AttributeName>
+              <ParameterName>ErrFormat</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Формат вывода ошибки</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'xml'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Path</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>Указание языка для набора multi-language данных </Description>
+              <Mandatory>true</Mandatory>
+              <Default>''</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Result</AttributeName>
+              <ParameterName>Result</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_del_BatchPayDocRecords</ProcedureName>
+          <Part>Response</Part>
+          <Method>ACTION</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>Lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <Default>''</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Result</AttributeName>
+              <ParameterName>Result</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+      </ProcedureCalls>
+    </Entity>
+    <Entity>
+      <EntityName>BankStatementTransactions</EntityName>
+      <ProcedureCalls>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatements</ProcedureName>
+          <Part>Request</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>BankAccountID</AttributeName>
+              <ParameterName>Bac_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Идентификатор банковского счета</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateFrom</AttributeName>
+              <ParameterName>DateFrom</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateTo</AttributeName>
+              <ParameterName>DateTo</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ErrFormat</AttributeName>
+              <ParameterName>ErrFormat</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Формат вывода ошибки</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'json'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Path</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IDType</AttributeName>
+              <ParameterName>IsExternalID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>Признак передачи внешнего значения ID</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>If-Modified-Since</AttributeName>
+              <ParameterName>IfModifiedSinceDate</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Header</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>Указание языка для набора multi-language данных </Description>
+              <Mandatory>true</Mandatory>
+              <Default>''</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Page</AttributeName>
+              <ParameterName>PageNumber</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PageSize</AttributeName>
+              <ParameterName>PageSize</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Кол-во записей на странице (server paging)</Description>
+              <Mandatory>false</Mandatory>
+              <Default>10000</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>SortColumn</AttributeName>
+              <ParameterName>SortColumn</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>''</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>20</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>SortDirection</AttributeName>
+              <ParameterName>SortDirection</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'ASC'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>20</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatements</ProcedureName>
+          <Part>Response</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>BankAccountNumberFrom</AttributeName>
+              <ParameterName>accountfrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Счет отправителя платежа, соответствует полю  BANK_ACCOUNT_TEXT таблицы CE.CE_STATEMENT_LINES</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>40</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Amount</AttributeName>
+              <ParameterName>amount</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Сумма платежа. Сумма в ГРН с копейками</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>13</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankAccountExternalID</AttributeName>
+              <ParameterName>bank_account_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>ID банковского счета, соответствует полю CE.CE_STATEMENT_HEADERS_ALL.BANK_ACCOUNT_ID</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankAccountNumberTo</AttributeName>
+              <ParameterName>bank_account_num</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Номер банковского счета компании, на который поступил платеж</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>40</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>pre_ExternalID</AttributeName>
+              <ParameterName>bank_st_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>ID банковской выписки</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PaymentOrder</AttributeName>
+              <ParameterName>bank_trx_number</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Номер платежного поручения</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>240</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankInternalCodeTo</AttributeName>
+              <ParameterName>bankcode</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Название банковского счета, по которому получен платеж</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>20</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BatchID</AttributeName>
+              <ParameterName>batch_id</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>ID пачки платежей, которая находится на обработке в АРМ</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>acnt_Number</AttributeName>
+              <ParameterName>bill_acc</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Лицевой счет абонента</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>CreatedBy</AttributeName>
+              <ParameterName>created_by</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>EffectiveDate</AttributeName>
+              <ParameterName>creation_date</ParameterName>
+              <DataType>date</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>Date</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Дата создания записи в интерфейсной таблице</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>crn_CodeISO</AttributeName>
+              <ParameterName>currency_code</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Код валюты</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>5</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PayDate</AttributeName>
+              <ParameterName>date_doc</ParameterName>
+              <DataType>date</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>Date</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Дата платежа</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ID</AttributeName>
+              <ParameterName>doc_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Значение данного поля соответствует значению поля  DOC_ID из интерфейсной таблицы. Необходим уникальный индекс.</Description>
+              <Mandatory>true</Mandatory>
+              <LinkEntity>PaymentDocuments.ExportID</LinkEntity>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ModifiedDate</AttributeName>
+              <ParameterName>last_update_date</ParameterName>
+              <DataType>date</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>Date</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Дата обновления записи в интерфейсной таблице</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ModifiedDBy</AttributeName>
+              <ParameterName>last_updated_by</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Пользователь обновивший запись</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>pre_NumReestr</AttributeName>
+              <ParameterName>list_num</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Номер выписки в биллинговой системе.</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>255</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankCodeTo</AttributeName>
+              <ParameterName>mfo</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>МФО банковского счета, на который поступил платеж</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>10</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankCodeFrom</AttributeName>
+              <ParameterName>mfofrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>МФО банка отправителя</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>20</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankNameFrom</AttributeName>
+              <ParameterName>namefrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Наименование отправителя</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>120</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BusinessUIDFrom</AttributeName>
+              <ParameterName>okpofrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>ОКПО отправителя</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>20</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>TenantID</AttributeName>
+              <ParameterName>org_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>org_id - идентификатор организации</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>RequestNumber</AttributeName>
+              <ParameterName>req_num</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Номер заявки на покупки валюты</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>40</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Status</AttributeName>
+              <ParameterName>status</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Статус строки интерфейса</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusCode</AttributeName>
+              <ParameterName>status_code</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>100</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusName</AttributeName>
+              <ParameterName>statusName</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>106</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Total</AttributeName>
+              <ParameterName>Total</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>TransactionCode</AttributeName>
+              <ParameterName>trx_code</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Код транзакции при проведении операции покупки, продажи валюты</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>40</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>TransactionText</AttributeName>
+              <ParameterName>trx_text</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Назначение платежа</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>510</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>UserName</AttributeName>
+              <ParameterName>userName</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Учетная запись, под которой запущена сессия активного процесса (sysprocesses)</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>-1</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+      </ProcedureCalls>
+      <MetaData>
+        <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Summary />
+          <Url />
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+      </MetaData>
     </Entity>
     <Entity>
       <EntityName>BillingTasks</EntityName>
@@ -28630,7 +29536,7 @@ The PUT method allows update identification and financial information about the 
               <DBDataType>Int32</DBDataType>
               <Direction>INOUT</Direction>
               <Description>No description</Description>
-              <Mandatory>true</Mandatory>
+              <Mandatory>false</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>Body</Place>
@@ -28723,7 +29629,7 @@ The PUT method allows update identification and financial information about the 
               <DBDataType>Int32</DBDataType>
               <Direction>OUT</Direction>
               <Description>No description</Description>
-              <Mandatory>true</Mandatory>
+              <Mandatory>false</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>Body</Place>
