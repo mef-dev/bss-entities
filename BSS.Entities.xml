@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2022-10-19T21:03:19.2896334+03:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2023-01-24T19:46:36.2373796+02:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -13091,6 +13091,134 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <ComplexParts />
               <ComplexProperties />
             </Argument>
+            <Argument>
+              <AttributeName>AmountFrom</AttributeName>
+              <ParameterName>AmountFrom</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>0</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>AmountUpto</AttributeName>
+              <ParameterName>AmountUpto</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PaymentOrder</AttributeName>
+              <ParameterName>bank_trx_number</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Номер платежного поручения</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BusinessUIDFrom</AttributeName>
+              <ParameterName>okpofrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>ОКПО отправителя</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>10</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusCode</AttributeName>
+              <ParameterName>StatusCode</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>User</AttributeName>
+              <ParameterName>User</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BatchType</AttributeName>
+              <ParameterName>BatchType</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
           </Arguments>
         </ProcedureCall>
         <ProcedureCall>
@@ -13335,6 +13463,24 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
           <Method>ACTION</Method>
           <Arguments>
             <Argument>
+              <AttributeName>BatchType</AttributeName>
+              <ParameterName>BatchType</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
               <AttributeName>ErrFormat</AttributeName>
               <ParameterName>ErrFormat</ParameterName>
               <DataType>string</DataType>
@@ -13415,6 +13561,24 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
           <Part>Response</Part>
           <Method>ACTION</Method>
           <Arguments>
+            <Argument>
+              <AttributeName>BatchType</AttributeName>
+              <ParameterName>BatchType</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
             <Argument>
               <AttributeName>Lang</AttributeName>
               <ParameterName>Lang</ParameterName>
@@ -13585,6 +13749,166 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
           </Arguments>
         </ProcedureCall>
       </ProcedureCalls>
+    </Entity>
+    <Entity>
+      <EntityName>BankStatementStatuses</EntityName>
+      <ProcedureCalls>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatementStatuses</ProcedureName>
+          <Part>Request</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>ErrFormat</AttributeName>
+              <ParameterName>ErrFormat</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Формат вывода ошибки</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'json'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Path</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IDType</AttributeName>
+              <ParameterName>IsExternalID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Признак передачи внешнего значения ID</Description>
+              <Mandatory>false</Mandatory>
+              <Default>0</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Указание языка для набора multi-language данных </Description>
+              <Mandatory>true</Mandatory>
+              <Default>'uk'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IsTech</AttributeName>
+              <ParameterName>IsTech</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatementStatuses</ProcedureName>
+          <Part>Response</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>Status</AttributeName>
+              <ParameterName>Status</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Статус блока(пачки): 0 - в работе; 1 - закрыта</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusCode</AttributeName>
+              <ParameterName>StatusCode</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>100</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusName</AttributeName>
+              <ParameterName>StatusName</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>106</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+      </ProcedureCalls>
+      <MetaData>
+        <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Summary />
+          <Url />
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+      </MetaData>
     </Entity>
     <Entity>
       <EntityName>BankStatementTransactions</EntityName>
@@ -13799,6 +14123,116 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <ComplexParts />
               <ComplexProperties />
             </Argument>
+            <Argument>
+              <AttributeName>AmountFrom</AttributeName>
+              <ParameterName>AmountFrom</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>0</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>AmountUpto</AttributeName>
+              <ParameterName>AmountUpto</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PaymentOrder</AttributeName>
+              <ParameterName>bank_trx_number</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Номер платежного поручения</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BusinessUIDFrom</AttributeName>
+              <ParameterName>okpofrom</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>ОКПО отправителя</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>10</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>StatusCode</AttributeName>
+              <ParameterName>StatusCode</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>User</AttributeName>
+              <ParameterName>User</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <Default>0</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
           </Arguments>
         </ProcedureCall>
         <ProcedureCall>
@@ -13961,7 +14395,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <Mandatory>false</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV />
-              <MaximumLength>4</MaximumLength>
+              <MaximumLength>24</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
               <Size>0</Size>
@@ -14338,6 +14772,165 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <Direction>OUTPUT</Direction>
               <Description>Учетная запись, под которой запущена сессия активного процесса (sysprocesses)</Description>
               <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>-1</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+      </ProcedureCalls>
+      <MetaData>
+        <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Summary />
+          <Url />
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+      </MetaData>
+    </Entity>
+    <Entity>
+      <EntityName>BankStatementUsers</EntityName>
+      <ProcedureCalls>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatementUsers</ProcedureName>
+          <Part>Request</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>ErrFormat</AttributeName>
+              <ParameterName>ErrFormat</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Формат вывода ошибки</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'json'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>25</MaximumLength>
+              <Place>Path</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IDType</AttributeName>
+              <ParameterName>IsExternalID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Признак передачи внешнего значения ID</Description>
+              <Mandatory>false</Mandatory>
+              <Default>0</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Указание языка для набора multi-language данных </Description>
+              <Mandatory>true</Mandatory>
+              <Default>'uk'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>3</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_BankStatementUsers</ProcedureName>
+          <Part>Response</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>Email</AttributeName>
+              <ParameterName>Email</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>512</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>Id</AttributeName>
+              <ParameterName>Id</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>900</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>UserId</AttributeName>
+              <ParameterName>UserId</ParameterName>
+              <DataType>bigint</DataType>
+              <TranslatedDataType>global::System.Int64?</TranslatedDataType>
+              <DBDataType>Int64</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>8</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>UserName</AttributeName>
+              <ParameterName>UserName</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Учетная запись, под которой запущена сессия активного процесса (sysprocesses)</Description>
+              <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV />
               <MaximumLength>-1</MaximumLength>
@@ -17821,6 +18414,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <Direction>IN</Direction>
               <Description>Идентификатор абонента</Description>
               <Mandatory>false</Mandatory>
+              <Default>0</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>QueryParam</Place>
@@ -17889,7 +18483,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <DBDataType>Decimal</DBDataType>
               <Direction>IN</Direction>
               <Description>Явное указание суммы подписки - для переопределения цены пакета в случае использования FMC подписок (сумма списания на основании суммы платежа)</Description>
-              <Mandatory>false</Mandatory>
+              <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>QueryParam</Place>
@@ -17923,7 +18517,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <DBDataType>Int32</DBDataType>
               <Direction>IN</Direction>
               <Description>No description</Description>
-              <Mandatory>false</Mandatory>
+              <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>QueryParam</Place>
@@ -17940,7 +18534,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <DBDataType>DateTime</DBDataType>
               <Direction>IN</Direction>
               <Description>дата активации</Description>
-              <Mandatory>false</Mandatory>
+              <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
               <Place>QueryParam</Place>
@@ -17958,7 +18552,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <Direction>IN</Direction>
               <Description>Формат вывода ошибки</Description>
               <Mandatory>false</Mandatory>
-              <Default>xml</Default>
+              <Default>'json'</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength>25</MaximumLength>
               <Place>QueryParam</Place>
@@ -18014,6 +18608,24 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
               <Default>0</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>InvoiceNumber</AttributeName>
+              <ParameterName>Pinv_Number</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Номер счета-оплаты</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>45</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
               <Size>0</Size>
