@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2023-01-24T19:46:36.2373796+02:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2023-02-20T12:03:47.7800669+02:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -14385,24 +14385,6 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <ComplexProperties />
             </Argument>
             <Argument>
-              <AttributeName>acnt_Number</AttributeName>
-              <ParameterName>bill_acc</ParameterName>
-              <DataType>integer</DataType>
-              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
-              <DBDataType>Int32</DBDataType>
-              <Direction>OUTPUT</Direction>
-              <Description>Лицевой счет абонента</Description>
-              <Mandatory>false</Mandatory>
-              <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV />
-              <MaximumLength>24</MaximumLength>
-              <Place>Body</Place>
-              <AttributeType>Value</AttributeType>
-              <Size>0</Size>
-              <ComplexParts />
-              <ComplexProperties />
-            </Argument>
-            <Argument>
               <AttributeName>CreatedBy</AttributeName>
               <ParameterName>created_by</ParameterName>
               <DataType>integer</DataType>
@@ -14775,6 +14757,24 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV />
               <MaximumLength>-1</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>acnt_Number</AttributeName>
+              <ParameterName>bill_acc</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>Лицевой счет абонента</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength>24</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
               <Size>0</Size>
