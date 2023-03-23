@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2023-03-22T12:07:32.0213286+02:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2023-03-23T12:02:17.5245925+02:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -13264,6 +13264,25 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <Direction>IN</Direction>
               <Description>No description</Description>
               <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV />
+              <MaximumLength xsi:nil="true" />
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>FilterMode</AttributeName>
+              <ParameterName>FilterMode</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Режим фильтрации</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV />
               <MaximumLength xsi:nil="true" />
