@@ -26,4 +26,4 @@ The BSS.Entities SID model diagram is a part of the business analysis of existin
 ### Useful links
  
 - Ready-to-use BSS.Entities package is available as [Nuget package](https://www.nuget.org/packages/BSS.Entities)
-- XML Schema is available in [XSD](https://raw.githubusercontent.com/mef-dev/model-first-backend-plugin/main/workflows/readme/sid.xsd)
+- XML Schema is available in [XSD](https://github.com/mef-dev/model-first-backend-plugin/blob/master/models.xsd)
