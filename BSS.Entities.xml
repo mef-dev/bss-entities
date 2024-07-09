@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2024-04-02T18:19:10.867211+03:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2024-07-09T22:55:29.4788279+03:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -51,11 +51,11 @@
               <TranslatedDataType>global::System.Int32?</TranslatedDataType>
               <DBDataType>Int32</DBDataType>
               <Direction>IN</Direction>
-              <Description>Core account category identifier. LOV:  1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
+              <Description>Core account category identifier. LOV: 1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
               <Mandatory>false</Mandatory>
               <Default>0</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV> 1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
+              <LOV>1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
               <MaximumLength xsi:nil="true" />
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -334,10 +334,10 @@
               <TranslatedDataType>global::System.Int32?</TranslatedDataType>
               <DBDataType>Int32</DBDataType>
               <Direction>OUTPUT</Direction>
-              <Description>Core account category identifier. LOV:  1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
+              <Description>Core account category identifier. LOV: 1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV> 1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
+              <LOV>1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
               <MaximumLength>4</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -922,10 +922,10 @@
               <TranslatedDataType>global::System.Int32?</TranslatedDataType>
               <DBDataType>Int32</DBDataType>
               <Direction>IN</Direction>
-              <Description>Core account category identifier. LOV:  1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
+              <Description>Core account category identifier. LOV: 1 - Prepaid, 2 - Credit (Client_cats directory)</Description>
               <Mandatory>false</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV> 1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
+              <LOV>1 - Prepaid, 2 - Credit (Client_cats directory)</LOV>
               <MaximumLength xsi:nil="true" />
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -2996,7 +2996,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -3038,7 +3038,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -4457,7 +4457,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
               <Mandatory>true</Mandatory>
               <Default>'uk' </Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -4680,7 +4680,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
               <Mandatory>true</Mandatory>
               <Default>'uk' </Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -7581,7 +7581,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -7780,7 +7780,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -7917,7 +7917,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -8119,7 +8119,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -8259,7 +8259,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Mandatory>true</Mandatory>
               <Default>'uk' </Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -8514,7 +8514,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -8687,7 +8687,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -8824,7 +8824,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -9025,7 +9025,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -14732,6 +14732,40 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
               <ComplexParts />
               <ComplexProperties />
             </Argument>
+            <Argument>
+              <AttributeName>DateFrom</AttributeName>
+              <ParameterName>DateFrom</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateTo</AttributeName>
+              <ParameterName>DateTo</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
           </Arguments>
         </ProcedureCall>
         <ProcedureCall>
@@ -17874,11 +17908,11 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/contracts</Ur
               <TranslatedDataType>global::System.Int32?</TranslatedDataType>
               <DBDataType>Int32</DBDataType>
               <Direction>IN</Direction>
-              <Description>Flag for separating the amounts of the advance payment and the amounts of repayment of invoices from the specified Amount. LOV:  1 - split amounts, 0 - don't split</Description>
+              <Description>Flag for separating the amounts of the advance payment and the amounts of repayment of invoices from the specified Amount. LOV: 1 - split amounts, 0 - don't split</Description>
               <Mandatory>false</Mandatory>
               <Default>1</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV> 1 - split amounts, 0 - don't split</LOV>
+              <LOV>1 - split amounts, 0 - don't split</LOV>
               <MaximumLength xsi:nil="true" />
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -21972,7 +22006,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -22171,7 +22205,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -22272,7 +22306,7 @@ The PUT method allows update identification and financial information about the 
               <Direction>IN</Direction>
               <Description>режим расчета суммы АП к начислению</Description>
               <Mandatory>false</Mandatory>
-              <Default>0</Default>
+              <Default>Name</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV>1 - без учета FinBlock+Pause, 2 - с учетом FinBlock+Pause</LOV>
               <MaximumLength xsi:nil="true" />
@@ -22402,7 +22436,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -22535,7 +22569,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -22690,7 +22724,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -22892,7 +22926,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -23032,7 +23066,7 @@ The PUT method allows update identification and financial information about the 
               <Mandatory>true</Mandatory>
               <Default>'uk' </Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -23287,7 +23321,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -23460,7 +23494,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -24045,7 +24079,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -24246,7 +24280,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -25781,7 +25815,7 @@ The PUT method allows update identification and financial information about the 
               <Mandatory>true</Mandatory>
               <Default>'uk'</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -28646,7 +28680,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -28795,7 +28829,7 @@ The PUT method allows update identification and financial information about the 
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -36295,7 +36329,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -36494,7 +36528,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -36595,7 +36629,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Direction>IN</Direction>
               <Description>режим расчета суммы АП к начислению</Description>
               <Mandatory>false</Mandatory>
-              <Default>0</Default>
+              <Default>Name</Default>
               <IsPrimaryKey>false</IsPrimaryKey>
               <LOV>1 - без учета FinBlock+Pause, 2 - с учетом FinBlock+Pause</LOV>
               <MaximumLength xsi:nil="true" />
@@ -36725,7 +36759,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -36858,7 +36892,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -37073,7 +37107,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Mandatory>true</Mandatory>
               <Default>'uk' </Default>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -37396,7 +37430,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -37598,7 +37632,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -37720,7 +37754,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -37893,7 +37927,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -38030,7 +38064,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>QueryParam</Place>
               <AttributeType>Value</AttributeType>
@@ -38231,7 +38265,7 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
               <Description>Указание языка для набора multi-language данных</Description>
               <Mandatory>true</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
-              <LOV>поддерживаются значения en-английский, uk-украинский, ru-руский</LOV>
+              <LOV>поддерживаются значения en-английский, uk-украинский, ru-русский</LOV>
               <MaximumLength>3</MaximumLength>
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
