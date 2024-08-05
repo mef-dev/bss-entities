@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2024-07-09T22:55:29.4788279+03:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2024-08-05T13:25:59.9853335+03:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -18988,6 +18988,365 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
           <Method>GET</Method>
           <HttpMethod>GET</HttpMethod>
           <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/CustomerPayments/AllocatedPayments</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+      </MetaData>
+    </Entity>
+    <Entity>
+      <EntityName>CustomerPayments/Summary</EntityName>
+      <ProcedureCalls>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_CustomerPaymentSummary</ProcedureName>
+          <Part>Request</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>BankAccountID</AttributeName>
+              <ParameterName>Bac_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PayInterfaceID</AttributeName>
+              <ParameterName>Cpif_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateFrom</AttributeName>
+              <ParameterName>DateFrom</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateTo</AttributeName>
+              <ParameterName>DateTo</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>IN</Direction>
+              <Description>No description</Description>
+              <Mandatory>false</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>ErrFormat</AttributeName>
+              <ParameterName>ErrFormat</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>IN</Direction>
+              <Description>Error output format. LOV: supported value is json</Description>
+              <Mandatory>false</Mandatory>
+              <Default>'xml'</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV>supported value is json</LOV>
+              <MaximumLength>25</MaximumLength>
+              <Place>Path</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IDType</AttributeName>
+              <ParameterName>IsExternalID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>Sign of passing an external ID value. LOV: 1 - external ID, 0 - internal ID</Description>
+              <Mandatory>false</Mandatory>
+              <Default>1</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV>1 - external ID, 0 - internal ID</LOV>
+              <MaximumLength xsi:nil="true" />
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>lang</AttributeName>
+              <ParameterName>Lang</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>INOUT</Direction>
+              <Description>Specifying a language for a multi-language dataset. LOV: supported value are en-English, uk-Ukrainian, ru-russian</Description>
+              <Mandatory>true</Mandatory>
+              <Default>''</Default>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV>supported value are en-English, uk-Ukrainian, ru-russian</LOV>
+              <MaximumLength>3</MaximumLength>
+              <Place>QueryParam</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+        <ProcedureCall>
+          <ProcedureName>p_ucp_get_CustomerPaymentSummary</ProcedureName>
+          <Part>Response</Part>
+          <Method>GET</Method>
+          <Arguments>
+            <Argument>
+              <AttributeName>BankAccountNumber</AttributeName>
+              <ParameterName>bac_Number</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>40</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>BankName</AttributeName>
+              <ParameterName>bnkd_Name</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>222</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>cpay_Amount</AttributeName>
+              <ParameterName>cpay_Amount</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>17</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>cpay_AmountTaxes</AttributeName>
+              <ParameterName>cpay_AmountTaxes</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>17</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>cpay_AmountWithoutTaxes</AttributeName>
+              <ParameterName>cpay_AmountWithoutTaxes</ParameterName>
+              <DataType>decimal</DataType>
+              <TranslatedDataType>global::System.Decimal?</TranslatedDataType>
+              <DBDataType>Decimal</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>17</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>cpay_Count</AttributeName>
+              <ParameterName>cpay_Count</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PayInterfaceID</AttributeName>
+              <ParameterName>cpif_ID</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>PayInterfaceName</AttributeName>
+              <ParameterName>cpifd_Name</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>100</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>cps_Code</AttributeName>
+              <ParameterName>cps_Code</ParameterName>
+              <DataType>string</DataType>
+              <TranslatedDataType>global::System.String</TranslatedDataType>
+              <DBDataType>String</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>6</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateFrom</AttributeName>
+              <ParameterName>DateFrom</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>8</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>DateTo</AttributeName>
+              <ParameterName>DateTo</ParameterName>
+              <DataType>datetime</DataType>
+              <TranslatedDataType>global::System.DateTime?</TranslatedDataType>
+              <DBDataType>DateTime</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>8</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+            <Argument>
+              <AttributeName>IsExternalSync</AttributeName>
+              <ParameterName>IsExternalSync</ParameterName>
+              <DataType>integer</DataType>
+              <TranslatedDataType>global::System.Int32?</TranslatedDataType>
+              <DBDataType>Int32</DBDataType>
+              <Direction>OUTPUT</Direction>
+              <Description>No description</Description>
+              <Mandatory>true</Mandatory>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <MaximumLength>4</MaximumLength>
+              <Place>Body</Place>
+              <AttributeType>Value</AttributeType>
+              <Size>0</Size>
+              <ComplexParts />
+              <ComplexProperties />
+            </Argument>
+          </Arguments>
+        </ProcedureCall>
+      </ProcedureCalls>
+      <MetaData>
+        <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Summary />
+          <Url />
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
