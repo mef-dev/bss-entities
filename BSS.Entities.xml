@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2024-09-20T14:45:25.5297379+03:00">
+<Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CreatedOn="2025-03-14T10:20:11.1010689+02:00">
   <Entities>
     <Entity>
       <EntityName>Accounts</EntityName>
@@ -1275,28 +1275,6 @@
       </ProcedureCalls>
       <MetaData>
         <Item>
-          <Method>SET</Method>
-          <HttpMethod>POST</HttpMethod>
-          <Summary>The Accounts entity provides a standardized mechanism for the management of billing and settlement accounts, as well as for financial accounting (account receivable) either in B2B or B2B2C contexts.
-
-POST method allows the creation of account information either in a B2B2C relationship context (creation of mass market customer billing account within a “Billing on Behalf of” process for example) or in a B2B context (creation of a billing/settlement account for a partner or B2B customer).
-
-It also allows the creation of bill items allowing partners or B2B customer to check their invoice.
-
-The API allows manages the following data resources:
-- AccountTaxes
-- BankDetails
-- PaymentDocuments
-- CustomerPayments
-- Adjustments
-- BillingTasks
-and support no any Actions</Summary>
-          <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/accounts</Url>
-          <HttpEntitities>
-            <HttpEntity>Customers</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
           <Method>GET</Method>
           <HttpMethod>GET</HttpMethod>
           <Summary>The Accounts entity provides a standardized mechanism for the management of billing and settlement accounts, as well as for financial accounting (account receivable) either in B2B or B2B2C contexts.
@@ -1316,6 +1294,28 @@ and support no any Actions</Summary>
           <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/Accounts</Url>
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>POST</HttpMethod>
+          <Summary>The Accounts entity provides a standardized mechanism for the management of billing and settlement accounts, as well as for financial accounting (account receivable) either in B2B or B2B2C contexts.
+
+POST method allows the creation of account information either in a B2B2C relationship context (creation of mass market customer billing account within a “Billing on Behalf of” process for example) or in a B2B context (creation of a billing/settlement account for a partner or B2B customer).
+
+It also allows the creation of bill items allowing partners or B2B customer to check their invoice.
+
+The API allows manages the following data resources:
+- AccountTaxes
+- BankDetails
+- PaymentDocuments
+- CustomerPayments
+- Adjustments
+- BillingTasks
+and support no any Actions</Summary>
+          <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/accounts</Url>
+          <HttpEntitities>
+            <HttpEntity>Customers</HttpEntity>
           </HttpEntitities>
         </Item>
         <Item>
@@ -2235,18 +2235,18 @@ and support no any Actions</Summary>
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounttaxes/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/accounttaxes</Url>
           <HttpEntitities>
             <HttpEntity>Accounts</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounttaxes/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -3661,9 +3661,10 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
               <TranslatedDataType>global::System.Int32?</TranslatedDataType>
               <DBDataType>Int32</DBDataType>
               <Direction>IN</Direction>
-              <Description>No description</Description>
+              <Description>Tax values period identifier. LOV: 31 - VAT 20%, 1 - VAT latest, 20 - VAT 0%, 32 - VAT+PF 7,5%, 2 - VAT+PF latest, 4 - No Taxes</Description>
               <Mandatory>false</Mandatory>
               <IsPrimaryKey>false</IsPrimaryKey>
+              <LOV>31 - VAT 20%, 1 - VAT latest, 20 - VAT 0%, 32 - VAT+PF 7,5%, 2 - VAT+PF latest, 4 - No Taxes</LOV>
               <MaximumLength xsi:nil="true" />
               <Place>Body</Place>
               <AttributeType>Value</AttributeType>
@@ -3720,18 +3721,18 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/adjustments/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/adjustments</Url>
           <HttpEntitities>
             <HttpEntity>Accounts</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/adjustments/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -7454,19 +7455,19 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/addresses</Ur
         </Item>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations
 POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/associations</Url>
           <HttpEntitities>
             <HttpEntity>Associations</HttpEntity>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[id]</Url>
+          <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
@@ -12221,20 +12222,20 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/AuthCodes</Ur
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/bankdetails/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/bankdetails
 POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Url>
           <HttpEntitities>
             <HttpEntity>Associations</HttpEntity>
             <HttpEntity>Customers</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/bankdetails/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -15987,16 +15988,16 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/callusergroups/[id]</Url>
+          <HttpMethod>POST</HttpMethod>
+          <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/callusergroups</Url>
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>POST</HttpMethod>
-          <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/callusergroups</Url>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/callusergroups/[id]</Url>
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
@@ -16494,14 +16495,6 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/bankdetails</Ur
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/contracts/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/customers/[parentid]/contracts
 POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/contracts
@@ -16510,6 +16503,14 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/contracts</Ur
             <HttpEntity>Associations</HttpEntity>
             <HttpEntity>Customers</HttpEntity>
             <HttpEntity>Subscribers</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/contracts/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -22249,6 +22250,26 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/customerpayments
       </ProcedureCalls>
       <MetaData>
         <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Summary>The Customers entity provides a standardized mechanism for customer and customer account management such as creation, update, retrieval, and close. Customers can be a person, an organization, or another service provider who buys products from an enterprise. 
+
+The GET method allows retrieve of identification and financial information about the Customer and the following data resources:
+- Subscribers
+- Profiles
+- Accounts
+- Addresses
+- Contracts
+- TreenodeProperties
+- Discounts
+- AuthCodes
+- Gains</Summary>
+          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/Customers</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
           <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Summary>The Customers entity provides a standardized mechanism for customer and customer account management such as creation, update, retrieval, and close. Customers can be a person, an organization, or another service provider who buys products from an enterprise. 
@@ -22271,26 +22292,6 @@ and support the following Actions:
 POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/associations/[parentid]/customers</Url>
           <HttpEntitities>
             <HttpEntity>Associations</HttpEntity>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>GET</Method>
-          <HttpMethod>GET</HttpMethod>
-          <Summary>The Customers entity provides a standardized mechanism for customer and customer account management such as creation, update, retrieval, and close. Customers can be a person, an organization, or another service provider who buys products from an enterprise. 
-
-The GET method allows retrieve of identification and financial information about the Customer and the following data resources:
-- Subscribers
-- Profiles
-- Accounts
-- Addresses
-- Contracts
-- TreenodeProperties
-- Discounts
-- AuthCodes
-- Gains</Summary>
-          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/Customers</Url>
-          <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
@@ -29966,18 +29967,18 @@ The PUT method allows update identification and financial information about the 
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/paymentdocuments/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/accounts/[parentid]/paymentdocuments</Url>
           <HttpEntitities>
             <HttpEntity>Accounts</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/paymentdocuments/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -33936,18 +33937,18 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
       <MetaData>
         <Item>
           <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/servicesubscriptions/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>SET</Method>
           <HttpMethod>POST</HttpMethod>
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/templatesubscriptions/[parentid]/servicesubscriptions</Url>
           <HttpEntitities>
             <HttpEntity>Templatesubscriptions</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/servicesubscriptions/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
@@ -36597,9 +36598,17 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
       </ProcedureCalls>
       <MetaData>
         <Item>
-          <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[id]</Url>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/Subscribers</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>GET</Method>
+          <HttpMethod>GET</HttpMethod>
+          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/TEST/Subscribers.json?lang=uk</Url>
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
@@ -36613,17 +36622,9 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
           </HttpEntitities>
         </Item>
         <Item>
-          <Method>GET</Method>
-          <HttpMethod>GET</HttpMethod>
-          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/Subscribers</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
-          <Method>GET</Method>
-          <HttpMethod>GET</HttpMethod>
-          <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/TEST/Subscribers.json?lang=uk</Url>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[id]</Url>
           <HttpEntitities>
             <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
@@ -42337,14 +42338,6 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
       </ProcedureCalls>
       <MetaData>
         <Item>
-          <Method>SET</Method>
-          <HttpMethod>PUT</HttpMethod>
-          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/templatesubscriptions/[id]</Url>
-          <HttpEntitities>
-            <HttpEntity>&lt;empty&gt;</HttpEntity>
-          </HttpEntitities>
-        </Item>
-        <Item>
           <Method>GET</Method>
           <HttpMethod>GET</HttpMethod>
           <Url>GET &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/TemplateSubscriptions</Url>
@@ -42358,6 +42351,14 @@ POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/subscribers/[parentid]/profiles</Url
           <Url>POST &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/agreements/[parentid]/templatesubscriptions</Url>
           <HttpEntitities>
             <HttpEntity>Agreements</HttpEntity>
+          </HttpEntitities>
+        </Item>
+        <Item>
+          <Method>SET</Method>
+          <HttpMethod>PUT</HttpMethod>
+          <Url>PUT &lt;host&gt;[:&lt;port&gt;]/api/v1/bss/templatesubscriptions/[id]</Url>
+          <HttpEntitities>
+            <HttpEntity>&lt;empty&gt;</HttpEntity>
           </HttpEntitities>
         </Item>
       </MetaData>
